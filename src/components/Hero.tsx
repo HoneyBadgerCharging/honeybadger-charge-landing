@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap, MapPin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-video-bg.jpg";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+  
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
@@ -60,6 +63,16 @@ export const Hero = () => {
               aria-describedby="home-description"
             >
               <span>For Home</span>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg font-semibold transition-all group"
+              onClick={() => navigate('/find-charger')}
+              aria-label="Find nearest EV charging station"
+            >
+              <MapPin className="mr-2 h-5 w-5" aria-hidden="true" />
+              <span>Find a Charger</span>
             </Button>
           </div>
           
