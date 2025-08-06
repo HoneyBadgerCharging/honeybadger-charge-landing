@@ -68,7 +68,7 @@ export const ValueProposition = () => {
 
         <div className="relative max-w-6xl mx-auto">
           {/* Progress Line */}
-          <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-muted">
+          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-muted z-0">
             <div className="h-full bg-primary origin-left transform transition-all duration-2000 ease-out" 
                  style={{ 
                    width: `${(visibleSteps.filter(Boolean).length / steps.length) * 100}%` 
@@ -91,7 +91,7 @@ export const ValueProposition = () => {
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
                   {/* Step Number */}
-                  <div className="relative mb-6">
+                  <div className="relative mb-6 z-10">
                     <div className={`w-16 h-16 mx-auto rounded-full border-4 flex items-center justify-center transition-all duration-500 ${
                       isVisible 
                         ? 'bg-primary border-primary text-primary-foreground' 
