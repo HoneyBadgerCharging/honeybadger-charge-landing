@@ -2,6 +2,7 @@ import { Hero } from "@/components/Hero";
 import { ValueProposition } from "@/components/ValueProposition";
 import { BenefitsGrid } from "@/components/BenefitsGrid";
 import { TrustSection } from "@/components/TrustSection";
+import { Footer } from "@/components/Footer";
 import { BlogSection } from "@/components/BlogSection";
 import { Navbar } from "@/components/Navbar";
 
@@ -14,6 +15,7 @@ const Index = () => {
       <BenefitsGrid />
       <TrustSection />
       <BlogSection />
+      <Footer />
     </div>
   );
 };

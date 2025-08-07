@@ -49,20 +49,12 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold group transition-all"
-              aria-label="Get started with business EV charging solutions"
-              aria-describedby="business-description"
+              onClick={() => navigate('/host-charger')}
+              aria-label="Start hosting EV charging solutions"
+              aria-describedby="host-description"
             >
-              <span>For Business</span>
+              <span>Host a Charger</span>
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-semibold transition-all"
-              aria-label="Get started with home EV charging solutions"
-              aria-describedby="home-description"
-            >
-              <span>For Home</span>
             </Button>
             <Button 
               size="lg" 
@@ -78,8 +70,7 @@ export const Hero = () => {
           
           {/* Screen reader descriptions */}
           <div className="sr-only">
-            <p id="business-description">Learn about zero-cost EV charging installation for commercial properties and start earning revenue from day one.</p>
-            <p id="home-description">Discover convenient home EV charging solutions for residential properties.</p>
+            <p id="host-description">Learn about zero-cost EV charging installation for your property and start earning revenue from day one with our complete hosting solutions.</p>
           </div>
         </div>
       </div>

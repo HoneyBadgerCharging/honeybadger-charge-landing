@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import FindCharger from "./pages/FindCharger";
+import HostCharger from "./pages/HostCharger";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 
@@ -20,6 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/find-charger" element={<FindCharger />} />
+          <Route path="/host-charger" element={<HostCharger />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

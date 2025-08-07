@@ -31,7 +31,10 @@ export const Navbar = () => {
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
-          <button className="text-foreground hover:text-primary transition-colors">
+          <button 
+            className="text-foreground hover:text-primary transition-colors"
+            onClick={() => navigate('/host-charger')}
+          >
             Host a Charger
           </button>
           <button 
