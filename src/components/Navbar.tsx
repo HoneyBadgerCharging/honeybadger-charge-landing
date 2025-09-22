@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
@@ -26,8 +25,11 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
-          <Zap className="w-6 h-6 text-primary mr-2" />
-          <span className="text-lg font-semibold">HoneyBadger Charging</span>
+          <img 
+            src="/logo.webp" 
+            alt="HoneyBadger Charging" 
+            className="h-12 w-auto object-contain"
+          />
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
