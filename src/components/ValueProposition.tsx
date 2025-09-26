@@ -99,9 +99,6 @@ export const ValueProposition = () => {
                     }`}>
                       <Icon className="w-8 h-8" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-bold">
-                      {index + 1}
-                    </div>
                   </div>
 
                   <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
