@@ -23,16 +23,16 @@ export const Navbar = () => {
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       }`}
     >
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between space-x-4">
         <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
           <img 
             src="/logo.webp" 
             alt="HoneyBadger Charging" 
-            className="h-12 w-auto object-contain"
+            className="h-10 sm:h-12 w-auto object-contain"
           />
         </div>
         
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
           <button 
             className="text-foreground hover:text-primary transition-colors"
             onClick={() => navigate('/host-charger')}
