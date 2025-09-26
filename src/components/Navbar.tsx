@@ -71,6 +71,7 @@ export const Navbar = () => {
               Get Started
             </Button>
           </div>
+        </div>
       </div>
     </nav>
   );
