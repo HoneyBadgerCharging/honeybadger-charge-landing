@@ -23,45 +23,54 @@ export const Navbar = () => {
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between space-x-4">
-        <div className="flex items-center cursor-pointer" onClick={() => navigate('/')}>
-          <img 
-            src="/logo.webp" 
-            alt="HoneyBadger Charging" 
-            className="h-10 sm:h-12 w-auto object-contain"
-          />
-        </div>
-        
-        <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
-          <button 
-            className="text-foreground hover:text-primary transition-colors"
-            onClick={() => navigate('/host-charger')}
+      <div className="container mx-auto px-4 sm:px-6 py-4">
+        <div className="flex items-center justify-between gap-4">
+          {/* Logo - Fixed width to prevent movement */}
+          <div 
+            className="flex-shrink-0 w-[140px] sm:w-[160px] cursor-pointer" 
+            onClick={() => navigate('/')}
           >
-            Host a Charger
-          </button>
-          <button 
-            className="text-foreground hover:text-primary transition-colors"
-            onClick={() => navigate('/find-charger')}
-          >
-            Find a Charger
-          </button>
-          <button 
-            className="text-foreground hover:text-primary transition-colors"
-            onClick={() => navigate('/blog')}
-          >
-            Blog
-          </button>
-          <button className="text-foreground hover:text-primary transition-colors">
-            FAQ
-          </button>
-          <button className="text-foreground hover:text-primary transition-colors">
-            Support
-          </button>
-        </div>
+            <img 
+              src="/logo.webp" 
+              alt="HoneyBadger Charging" 
+              className="h-8 sm:h-10 w-auto object-contain"
+            />
+          </div>
+          
+          {/* Navigation - Center aligned with flex-grow */}
+          <div className="hidden md:flex flex-grow items-center justify-center gap-4 lg:gap-8 max-w-2xl">
+            <button 
+              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base"
+              onClick={() => navigate('/host-charger')}
+            >
+              Host a Charger
+            </button>
+            <button 
+              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base"
+              onClick={() => navigate('/find-charger')}
+            >
+              Find a Charger
+            </button>
+            <button 
+              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base"
+              onClick={() => navigate('/blog')}
+            >
+              Blog
+            </button>
+            <button className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base">
+              FAQ
+            </button>
+            <button className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base">
+              Support
+            </button>
+          </div>
 
-        <Button size="sm" className="hidden md:block">
-          Get Started
-        </Button>
+          {/* CTA Button - Fixed width */}
+          <div className="flex-shrink-0 w-[100px] sm:w-[120px] hidden md:block text-right">
+            <Button size="sm" className="w-full">
+              Get Started
+            </Button>
+          </div>
       </div>
     </nav>
   );
