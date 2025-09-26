@@ -2,10 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Star } from "lucide-react";
 
-const partners = [
-  "Tesla", "ChargePoint", "EVgo", "Electrify America", "Blink Charging"
-];
-
 const testimonials = [
   {
     quote: "HoneyBadger transformed our parking lot into a revenue generator. Installation was seamless and support is exceptional.",
@@ -31,20 +27,6 @@ export const TrustSection = () => {
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
-        {/* Partners Section */}
-        <div className="text-center mb-16">
-          <h3 className="text-lg font-medium text-muted-foreground mb-8">
-            Trusted by leading EV charging networks
-          </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {partners.map((partner, index) => (
-              <div key={index} className="text-2xl font-bold text-foreground">
-                {partner}
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Testimonials */}
         <div className="mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12">
