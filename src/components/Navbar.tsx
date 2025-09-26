@@ -19,12 +19,12 @@ export const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border transition-all duration-300 w-full overflow-x-hidden ${
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-4">
-        <div className="flex items-center justify-between gap-4">
+      <div className="container mx-auto px-4 sm:px-6 py-4 max-w-[100vw] overflow-x-hidden">
+        <div className="flex items-center justify-between gap-4 w-full">
           {/* Logo - Fixed width to prevent movement */}
           <div 
             className="flex-shrink-0 w-[140px] sm:w-[160px] cursor-pointer" 
@@ -38,7 +38,7 @@ export const Navbar = () => {
           </div>
           
           {/* Navigation - Center aligned with flex-grow */}
-          <div className="hidden md:flex flex-grow items-center justify-center gap-4 lg:gap-8 max-w-2xl">
+          <div className="hidden md:flex flex-grow items-center justify-center gap-4 lg:gap-8 max-w-2xl overflow-x-hidden">
             <button 
               className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base"
               onClick={() => navigate('/host-charger')}
