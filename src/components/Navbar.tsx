@@ -19,11 +19,11 @@ export const Navbar = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border transition-all duration-300 w-full overflow-x-hidden ${
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-background/95 backdrop-blur-md border border-border rounded-full transition-all duration-300 max-w-6xl w-[calc(100%-2rem)] overflow-hidden ${
         isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-4 max-w-[100vw] overflow-x-hidden">
+      <div className="px-6 sm:px-8 py-3 overflow-x-hidden">
         <div className="flex items-center justify-between gap-4 w-full">
           {/* Logo - Fixed width to prevent movement */}
           <div 
