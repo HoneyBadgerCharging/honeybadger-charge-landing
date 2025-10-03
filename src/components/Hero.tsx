@@ -4,54 +4,58 @@ import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
   const navigate = useNavigate();
-  
+
   const menuItems = [
     { label: "Download the app", action: () => {} },
-    { label: "Install / Host chargers", action: () => navigate('/host-charger') },
-    { label: "Electrify my fleet", action: () => navigate('/host-charger') },
-    { label: "Provide charging subscriptions", action: () => navigate('/host-charger') },
+    {
+      label: "Install / Host chargers",
+      action: () => navigate("/host-charger"),
+    },
+    { label: "Electrify my fleet", action: () => navigate("/host-charger") },
+    {
+      label: "Provide charging subscriptions",
+      action: () => navigate("/host-charger"),
+    },
   ];
-  
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: 'url(/woman-shopping-charge.png)',
+          backgroundImage: 'url(/charger-closeup-bokeh.png)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'center'
         }}
       />
-      
-      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent z-10" />
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-6 py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content Card */}
-          <div className="bg-background rounded-3xl p-12 shadow-2xl max-w-xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight text-foreground">
-              Australia's
-              <span className="block">EV charging</span>
-              <span className="block">platform</span>
+          <div className="bg-background rounded-3xl p-16 shadow-2xl max-w-2xl">
+            <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight text-foreground">
+              Zero-Cost
+              <span className="block">EV Charging</span>
+              <span className="block">Solutions</span>
             </h1>
-            
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              We make hosting and managing chargers easy for organisations and destinations, and partner with fleet managers, vehicle manufacturers and hire-car providers to keep drivers moving.
+
+            <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
+              HoneyBadger Charging offers 100% free EV charging solutions, covering everything from site visits to installation. Our experts handle it all—consultations, parking design, electrical upgrades, and charger setup—at no cost to you.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-foreground hover:bg-foreground/90 text-background px-6 py-6 text-base font-semibold rounded-xl"
               >
                 <Apple className="mr-2 h-5 w-5" />
                 <span>Download on iOS</span>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background px-6 py-6 text-base font-semibold rounded-xl"
               >
                 <Download className="mr-2 h-5 w-5" />
@@ -63,7 +67,9 @@ export const Hero = () => {
           {/* Right Floating Menu */}
           <div className="hidden lg:flex justify-end">
             <div className="bg-background/95 backdrop-blur-sm rounded-2xl p-6 shadow-xl max-w-sm">
-              <p className="text-muted-foreground mb-4 font-medium">I want to...</p>
+              <p className="text-muted-foreground mb-4 font-medium">
+                I want to...
+              </p>
               <div className="space-y-3">
                 {menuItems.map((item, index) => (
                   <button
