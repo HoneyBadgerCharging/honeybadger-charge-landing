@@ -22,7 +22,7 @@ export const Hero = () => {
       <div className="relative z-20 w-full px-36 py-20">
         <div className="max-w-[1600px]">
           {/* Left Content Card */}
-          <div className="bg-background rounded-3xl p-16 shadow-2xl max-w-2xl mx-auto lg:mx-0">
+          <div className="bg-background rounded-3xl p-20 shadow-2xl max-w-3xl mx-auto lg:mx-0">
             <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight text-foreground">
               Zero-Cost
               <span className="block">EV Charging</span>
