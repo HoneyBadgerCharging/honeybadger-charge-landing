@@ -19,12 +19,12 @@ export const Footer = () => {
           
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="flex items-center">
-              <Zap className="w-8 h-8 text-primary mr-3 animate-glow" />
-              <span className="text-2xl font-bold text-foreground">
-                HoneyBadger
-                <span className="block text-primary text-lg font-medium">Charging</span>
-              </span>
+            <div className="flex items-center cursor-pointer">
+              <img 
+                src="/logo.webp" 
+                alt="HoneyBadger Charging" 
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Zero-cost EV charging solutions that power the future. Start earning revenue from day one with our complete charging infrastructure.
