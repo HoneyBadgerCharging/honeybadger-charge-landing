@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, MapPin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "@/assets/hero-video-bg.jpg";
 
 export const Hero = () => {
   const navigate = useNavigate();
@@ -12,7 +11,7 @@ export const Hero = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${heroImage})`,
+          backgroundImage: 'url(/charger-closeup-bokeh.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           filter: 'brightness(0.3)'
