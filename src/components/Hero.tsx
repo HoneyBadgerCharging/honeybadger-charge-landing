@@ -31,8 +31,8 @@ export const Hero = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="relative z-20 w-full px-6 lg:px-12 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-[1600px]">
           {/* Left Content Card */}
           <div className="bg-background rounded-3xl p-16 shadow-2xl max-w-2xl">
             <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight text-foreground">
