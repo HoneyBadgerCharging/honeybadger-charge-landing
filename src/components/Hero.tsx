@@ -23,7 +23,7 @@ export const Hero = () => {
         style={{
           backgroundImage: "url(/charger-closeup-bokeh.png)",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center"
         }}
       />
 
