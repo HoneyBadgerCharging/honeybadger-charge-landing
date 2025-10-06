@@ -43,6 +43,13 @@ export const Hero = () => {
               >
                 <span>Become a Site Host</span>
               </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background px-8 py-6 text-base font-semibold rounded-xl"
+              >
+                <span>Find a Charger</span>
+              </Button>
             </div>
           </div>
         </div>
