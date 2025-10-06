@@ -3,25 +3,11 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
-  const [isVisible, setIsVisible] = useState(true);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const heroHeight = window.innerHeight;
-      const scrollY = window.scrollY;
-      setIsVisible(scrollY > heroHeight * 0.3);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
     <nav 
-      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-background/95 backdrop-blur-md border border-border rounded-full transition-all duration-300 max-w-6xl w-[calc(100%-2rem)] overflow-hidden ${
-        isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
-      }`}
+      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-background/95 backdrop-blur-md border border-border rounded-full transition-all duration-300 max-w-6xl w-[calc(100%-2rem)] overflow-hidden translate-y-0 opacity-100"
     >
       <div className="px-6 sm:px-8 py-3 overflow-x-hidden">
         <div className="flex items-center justify-between gap-4 w-full">
