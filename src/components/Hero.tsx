@@ -39,7 +39,7 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-foreground hover:bg-foreground/90 text-background px-8 py-6 text-base font-semibold rounded-xl"
+                className="border-2 border-transparent bg-foreground hover:bg-foreground/90 text-background px-8 py-6 text-base font-semibold rounded-xl"
               >
                 <span>Become a Site Host</span>
               </Button>
