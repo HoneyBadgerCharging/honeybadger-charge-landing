@@ -16,7 +16,9 @@ export const Navbar = () => {
 
   return (
     <nav 
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-background/95 backdrop-blur-md border border-border rounded-full transition-all duration-300 max-w-6xl w-[calc(100%-2rem)] overflow-hidden translate-y-0 opacity-100"
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-background/95 backdrop-blur-md border border-border rounded-full transition-all duration-500 ease-out overflow-hidden translate-y-0 opacity-100 ${
+        isExpanded ? "max-w-6xl w-[calc(100%-2rem)]" : "max-w-2xl w-auto"
+      }`}
     >
       <div className="px-6 sm:px-8 py-3 overflow-x-hidden">
         <div className="flex items-center justify-between gap-4 w-full">
