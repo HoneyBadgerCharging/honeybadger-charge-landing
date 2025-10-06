@@ -3,7 +3,16 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Trigger expansion animation after mount
+    const timer = setTimeout(() => {
+      setIsExpanded(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <nav 
@@ -11,9 +20,11 @@ export const Navbar = () => {
     >
       <div className="px-6 sm:px-8 py-3 overflow-x-hidden">
         <div className="flex items-center justify-between gap-4 w-full">
-          {/* Logo - Fixed width to prevent movement */}
+          {/* Logo - Animated expansion */}
           <div 
-            className="flex-shrink-0 w-[140px] sm:w-[160px] cursor-pointer" 
+            className={`flex-shrink-0 cursor-pointer transition-all duration-500 ease-out overflow-hidden ${
+              isExpanded ? "w-[140px] sm:w-[160px] opacity-100" : "w-0 opacity-0"
+            }`}
             onClick={() => navigate('/')}
           >
             <img 
@@ -51,9 +62,11 @@ export const Navbar = () => {
             </button>
           </div>
 
-          {/* CTA Button - Fixed width */}
-          <div className="flex-shrink-0 w-[100px] sm:w-[120px] hidden md:block text-right">
-            <Button size="sm" className="w-full">
+          {/* CTA Button - Animated expansion */}
+          <div className={`flex-shrink-0 hidden md:block text-right transition-all duration-500 ease-out overflow-hidden ${
+            isExpanded ? "w-[100px] sm:w-[120px] opacity-100" : "w-0 opacity-0"
+          }`}>
+            <Button size="sm" className="w-full whitespace-nowrap">
               Get Started
             </Button>
           </div>
