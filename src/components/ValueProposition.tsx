@@ -1,7 +1,7 @@
 import { MessagesSquare, Pencil, HardHat, Wrench, Battery, ArrowRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
@@ -63,14 +63,14 @@ export const ValueProposition = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             How It Works
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From initial consultation to final setup, our proven process makes EV charging installation completely effortless and free
+            From consultation to revenue generation, our proven process makes EV charging adoption effortless
           </p>
         </div>
 
@@ -114,8 +114,6 @@ export const ValueProposition = () => {
                 </div>
               );
             })}
-          </div>
-
           </div>
 
           {/* Learn More Button */}
