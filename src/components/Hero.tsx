@@ -39,18 +39,9 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-foreground hover:bg-foreground/90 text-background px-6 py-6 text-base font-semibold rounded-xl"
+                className="bg-foreground hover:bg-foreground/90 text-background px-8 py-6 text-base font-semibold rounded-xl"
               >
-                <Apple className="mr-2 h-5 w-5" />
-                <span>Download on iOS</span>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background px-6 py-6 text-base font-semibold rounded-xl"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                <span>Download on Android</span>
+                <span>Become a Site Host</span>
               </Button>
             </div>
           </div>
