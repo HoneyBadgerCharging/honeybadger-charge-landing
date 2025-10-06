@@ -1,30 +1,38 @@
-import { Calendar, FileText, Wrench, DollarSign } from "lucide-react";
+import { MessagesSquare, Pencil, HardHat, Wrench, Battery, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const steps = [
   {
-    icon: Calendar,
-    title: "Request Consultation",
-    description: "Schedule a free consultation to assess your property's EV charging potential"
+    icon: MessagesSquare,
+    title: "Consultation & Assessment",
+    description: "Free consultation to assess your property's EV charging potential"
   },
   {
-    icon: FileText,
-    title: "Custom Design",
-    description: "Our experts create a tailored charging solution that fits your space and needs"
+    icon: Pencil,
+    title: "Parking Stall Design",
+    description: "Custom design and layout planning for optimal charging integration"
+  },
+  {
+    icon: HardHat,
+    title: "Infrastructure Upgrades",
+    description: "Necessary electrical upgrades and infrastructure preparation at no cost"
   },
   {
     icon: Wrench,
-    title: "Free Installation",
-    description: "Professional installation at zero cost to you, handled by certified technicians"
+    title: "Installation",
+    description: "Professional installation by certified technicians, completely free"
   },
   {
-    icon: DollarSign,
-    title: "Start Earning",
-    description: "Begin generating revenue immediately with our revenue-sharing model"
+    icon: Battery,
+    title: "Charger Setup",
+    description: "Final configuration and testing to ensure optimal performance"
   }
 ];
 
 export const ValueProposition = () => {
+  const navigate = useNavigate();
   const [visibleSteps, setVisibleSteps] = useState<boolean[]>(new Array(steps.length).fill(false));
   const refs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -55,14 +63,14 @@ export const ValueProposition = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-secondary">
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             How It Works
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From consultation to revenue generation, our proven process makes EV charging adoption effortless
+            From initial consultation to final setup, our proven process makes EV charging installation completely effortless and free
           </p>
         </div>
 
@@ -76,7 +84,7 @@ export const ValueProposition = () => {
             />
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-5 gap-6 lg:gap-8">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isVisible = visibleSteps[index];
@@ -106,6 +114,19 @@ export const ValueProposition = () => {
                 </div>
               );
             })}
+          </div>
+
+          </div>
+
+          {/* Learn More Button */}
+          <div className="mt-16 text-center">
+            <Button
+              onClick={() => navigate('/host-charger')}
+              className="group"
+            >
+              Learn More
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
           </div>
         </div>
       </div>
