@@ -1,1 +1,82 @@
-'use client';\n\nimport { useState } from \"react\";\nimport { motion } from \"framer-motion\";\nimport { Globe, Check } from \"lucide-react\";\n\ninterface Language {\n  code: string;\n  label: string;\n  region: string;\n}\n\nconst languages: Language[] = [\n  { code: \"EN\", label: \"English\", region: \"Australia\" },\n  { code: \"ZH\", label: \"中文\", region: \"China\" },\n  { code: \"JA\", label: \"日本語\", region: \"Japan\" },\n  { code: \"KO\", label: \"한국어\", region: \"Korea\" },\n];\n\ninterface LanguageSelectProps {\n  className?: string;\n}\n\nexport function LanguageSelect({ className }: LanguageSelectProps) {\n  const [isOpen, setIsOpen] = useState(false);\n  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);\n\n  return (\n    <div className={`relative ${className}`}>\n      <button\n        onClick={() => setIsOpen(!isOpen)}\n        className=\"flex items-center gap-2 px-3 py-2 text-muted-foreground hover:text-foreground transition-colors\"\n      >\n        <Globe className=\"h-4 w-4\" />\n        <span>{selectedLanguage.code}</span>\n      </button>\n\n      {isOpen && (\n        <>\n          {/* Backdrop */}\n          <div \n            className=\"fixed inset-0 z-40\" \n            onClick={() => setIsOpen(false)} \n          />\n\n          {/* Dropdown */}\n          <motion.div\n            initial={{ opacity: 0, y: -10 }}\n            animate={{ opacity: 1, y: 0 }}\n            exit={{ opacity: 0, y: -10 }}\n            transition={{ duration: 0.2 }}\n            className=\"absolute right-0 mt-1 w-48 rounded-xl border border-border bg-background shadow-lg z-50\"\n          >\n            <div className=\"p-2 space-y-1\">\n              {languages.map((language) => (\n                <button\n                  key={language.code}\n                  onClick={() => {\n                    setSelectedLanguage(language);\n                    setIsOpen(false);\n                  }}\n                  className=\"w-full flex items-center gap-3 px-2 py-1.5 rounded-lg hover:bg-muted transition-colors group text-left\"\n                >\n                  <div className=\"flex-1\">\n                    <div className=\"font-medium text-sm text-foreground\">\n                      {language.label}\n                    </div>\n                    <div className=\"text-xs text-muted-foreground\">\n                      {language.region}\n                    </div>\n                  </div>\n                  {selectedLanguage.code === language.code && (\n                    <Check className=\"h-4 w-4 text-primary\" />\n                  )}\n                </button>\n              ))}\n            </div>\n          </motion.div>\n        </>\n      )}\n    </div>\n  );\n}
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Globe, Check } from "lucide-react";
+
+interface Language {
+  code: string;
+  label: string;
+  region: string;
+}
+
+const languages: Language[] = [
+  { code: "EN", label: "English", region: "Canada" },
+  { code: "FR", label: "French", region: "Canada" },
+];
+
+interface LanguageSelectProps {
+  className?: string;
+}
+
+export function LanguageSelect({ className }: LanguageSelectProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
+
+  return (
+    <div className={`relative ${className}`}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`flex items-center gap-1 ${className}`}
+        title="Select language"
+        aria-label="Select language"
+      >
+        <Globe className="h-5 w-5" />
+      </button>
+
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 z-40"
+            onClick={() => setIsOpen(false)}
+          />
+
+          {/* Dropdown */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
+            className="absolute right-0 mt-1 w-48 rounded-xl border border-border bg-background shadow-lg z-50"
+          >
+            <div className="p-2 space-y-1">
+              {languages.map((language) => (
+                <button
+                  key={language.code}
+                  onClick={() => {
+                    setSelectedLanguage(language);
+                    setIsOpen(false);
+                  }}
+                  className="w-full flex items-center gap-3 px-2 py-1.5 rounded-lg hover:bg-muted transition-colors group text-left"
+                >
+                  <div className="flex-1">
+                    <div className="font-medium text-sm text-foreground">
+                      {language.label}
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      {language.region}
+                    </div>
+                  </div>
+                  {selectedLanguage.code === language.code && (
+                    <Check className="h-4 w-4 text-primary" />
+                  )}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        </>
+      )}
+    </div>
+  );
+}
