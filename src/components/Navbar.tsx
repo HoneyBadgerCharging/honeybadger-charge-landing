@@ -8,19 +8,47 @@ import SearchDialog from "@/components/ui/search-dialog";
 export const Navbar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
+  // Handle scroll
   useEffect(() => {
-    // Trigger expansion animation after mount
-    const timer = setTimeout(() => {
-      setIsExpanded(true);
-    }, 300);
-    return () => clearTimeout(timer);
-  }, []);
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 10;
+      setIsScrolled(scrolled);
+      if (scrolled && !isHovered) {
+        setIsExpanded(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHovered]);
+
+  // Initial expansion
+  useEffect(() => {
+    if (!isScrolled) {
+      const timer = setTimeout(() => {
+        setIsExpanded(true);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isScrolled]);
 
   return (
     <nav 
-      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-background/95 backdrop-blur-md border border-border rounded-full transition-all duration-500 ease-out overflow-hidden translate-y-0 opacity-100 ${
+      onMouseEnter={() => {
+        setIsHovered(true);
+        setIsExpanded(true);
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        if (isScrolled) {
+          setIsExpanded(false);
+        }
+      }}
+      className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-background/95 backdrop-blur-md border border-border rounded-full transition-all duration-500 ease-out translate-y-0 opacity-100 ${
         isExpanded ? "max-w-6xl w-[calc(100%-2rem)]" : "max-w-2xl w-auto"
       }`}
     >
@@ -36,7 +64,7 @@ export const Navbar = () => {
             <img 
               src="/logo.webp" 
               alt="HoneyBadger Charging" 
-              className="h-8 sm:h-10 w-auto object-contain"
+              className="h-10 sm:h-12 w-auto object-contain mt-1.5"
             />
           </div>
           
@@ -72,13 +100,13 @@ export const Navbar = () => {
           <div className={`flex-shrink-0 hidden md:flex items-center gap-2 transition-all duration-500 ease-out overflow-hidden ${
             isExpanded ? "w-auto opacity-100" : "w-0 opacity-0"
           }`}>
-            <LanguageSelect />
+            <LanguageSelect className="text-foreground hover:text-primary transition-colors" />
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+              className="p-2 text-foreground hover:text-primary transition-colors"
               aria-label="Search"
             >
-              <Search className="h-4 w-4" />
+              <Search className="h-5 w-5" />
             </button>
             <Button size="sm" className="whitespace-nowrap">
               Get Started
