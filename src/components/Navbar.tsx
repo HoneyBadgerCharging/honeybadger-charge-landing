@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { Search } from "lucide-react";
+import { LanguageSelect } from "@/components/ui/language-select";
+import SearchDialog from "@/components/ui/search-dialog";
 
 export const Navbar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -64,14 +68,28 @@ export const Navbar = () => {
             </button>
           </div>
 
-          {/* CTA Button - Animated expansion */}
-          <div className={`flex-shrink-0 hidden md:block text-right transition-all duration-500 ease-out overflow-hidden ${
-            isExpanded ? "w-[100px] sm:w-[120px] opacity-100" : "w-0 opacity-0"
+          {/* Right Actions - Language, Search, CTA */}
+          <div className={`flex-shrink-0 hidden md:flex items-center gap-2 transition-all duration-500 ease-out overflow-hidden ${
+            isExpanded ? "w-auto opacity-100" : "w-0 opacity-0"
           }`}>
-            <Button size="sm" className="w-full whitespace-nowrap">
+            <LanguageSelect />
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Search"
+            >
+              <Search className="h-4 w-4" />
+            </button>
+            <Button size="sm" className="whitespace-nowrap">
               Get Started
             </Button>
           </div>
+          
+          {/* Search Dialog */}
+          <SearchDialog 
+            isOpen={isSearchOpen} 
+            onClose={() => setIsSearchOpen(false)} 
+          />
         </div>
       </div>
     </nav>
