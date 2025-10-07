@@ -73,8 +73,8 @@ export const Experience = () => {
       <div className="w-full pl-8 pr-0 md:pl-16 lg:pl-32 xl:pl-48 relative z-10">
         <div className="text-white mb-16 max-w-[800px]">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-left">
-            <span className="text-foreground">The HoneyBadger</span><br />
-            <span className="text-primary">Experience</span>
+            <span className="text-foreground">The </span><span className="text-primary">HoneyBadger</span><br />
+            <span className="text-foreground">Experience</span>
           </h2>
         </div>
 

@@ -126,7 +126,7 @@ export const BenefitsGrid = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Choose HoneyBadger?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-foreground max-w-2xl mx-auto">
             Industry-leading technology and service that delivers results for your business
           </p>
         </div>
@@ -148,7 +148,7 @@ export const BenefitsGrid = () => {
                 {renderFeature(benefit.feature, isVisible)}
                 
                 <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
+                <p className="text-lg text-foreground">{benefit.description}</p>
               </div>
             );
           })}

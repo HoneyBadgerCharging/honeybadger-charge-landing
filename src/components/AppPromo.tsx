@@ -10,7 +10,7 @@ const features = [
 ];
 
 export const AppPromo = () => (
-  <section className="py-20 bg-background relative overflow-hidden">
+  <section className="py-32 md:py-40 bg-background relative overflow-hidden">
     <div className="container mx-auto px-6">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Content */}
@@ -21,7 +21,7 @@ export const AppPromo = () => (
             <span className="text-primary">Get Moving.</span>
           </h2>
           
-          <p className="text-xl text-muted-foreground mb-8 max-w-lg">
+          <p className="text-xl text-foreground mb-8 max-w-lg">
             Download the app and start charging in minutes. Find nearby stations, 
             check availability, and manage your charging sessions effortlessly.
           </p>
@@ -33,7 +33,7 @@ export const AppPromo = () => (
                 <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
                   <Check className="w-3 h-3 text-primary" />
                 </div>
-                <span className="text-muted-foreground">{feature}</span>
+                <span className="text-lg text-foreground">{feature}</span>
               </div>
             ))}
           </div>

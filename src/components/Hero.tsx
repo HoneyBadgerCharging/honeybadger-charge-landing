@@ -36,7 +36,7 @@ export const Hero = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}>
             <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight text-foreground">
-              Zero-Cost
+              <span className="text-primary">Zero-Cost</span>
               <span className="block">EV Charging</span>
               <span className="block">Solutions</span>
             </h1>
@@ -58,14 +58,14 @@ export const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="border-2 border-transparent bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl"
+                className="border-2 border-transparent bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl"
               >
                 <span>Become a Site Host</span>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl"
+                className="border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl"
               >
                 <span>Find a Charger</span>
               </Button>

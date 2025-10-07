@@ -47,7 +47,7 @@ export const TrustSection = () => {
                   </blockquote>
                   <div>
                     <div className="font-semibold" role="term">{testimonial.author}</div>
-                    <div className="text-sm text-muted-foreground" role="definition">{testimonial.property}</div>
+                    <div className="text-lg text-foreground" role="definition">{testimonial.property}</div>
                   </div>
                 </CardContent>
               </Card>

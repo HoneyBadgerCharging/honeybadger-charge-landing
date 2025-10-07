@@ -71,27 +71,27 @@ export const Navbar = () => {
           {/* Navigation - Center aligned with flex-grow */}
           <div className="hidden md:flex flex-grow items-center justify-center gap-4 lg:gap-8 max-w-2xl overflow-x-hidden">
             <button 
-              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base"
+              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-lg"
               onClick={() => navigate('/host-charger')}
             >
               Host a Charger
             </button>
             <button 
-              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base"
+              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-lg"
               onClick={() => navigate('/find-charger')}
             >
               Find a Charger
             </button>
             <button 
-              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base"
+              className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-lg"
               onClick={() => navigate('/blog')}
             >
               Blog
             </button>
-            <button className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base">
+            <button className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-lg">
               FAQ
             </button>
-            <button className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-sm lg:text-base">
+            <button className="text-foreground hover:text-primary transition-colors whitespace-nowrap text-lg">
               Support
             </button>
           </div>

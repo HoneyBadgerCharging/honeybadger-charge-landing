@@ -40,8 +40,8 @@ export const BlogSection = () => {
     <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Latest Insights</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Latest Insights</h2>
+          <p className="text-xl text-foreground max-w-2xl mx-auto">
             Stay informed with the latest news, trends, and insights from the EV charging industry.
           </p>
         </div>
@@ -61,7 +61,7 @@ export const BlogSection = () => {
                 />
               </div>
               <CardContent className="p-6">
-                <div className="flex items-center text-sm text-muted-foreground mb-3">
+                <div className="flex items-center text-lg text-foreground mb-3">
                   <Calendar className="w-4 h-4 mr-2" />
                   <span>{post.date}</span>
                   <Clock className="w-4 h-4 ml-4 mr-2" />
@@ -70,7 +70,7 @@ export const BlogSection = () => {
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-3">
+                <p className="text-lg text-foreground mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
                 <div className="flex items-center text-primary font-medium group-hover:gap-2 transition-all">

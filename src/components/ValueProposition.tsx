@@ -1,33 +1,44 @@
-import { MessagesSquare, Pencil, HardHat, Wrench, Battery, ArrowRight } from "lucide-react";
+import { useState as useCardHover } from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
-    icon: MessagesSquare,
-    title: "Consultation & Assessment",
-    description: "Free consultation to assess your property's EV charging potential"
+    number: "1",
+    title: "Consultation & Site Visit",
+    description: "To understand our client, we start your journey to assess the electrical infrastructure and understand your specific business needs, laying the foundation for a customized charging station solution.",
+    image: "/stock-photos/consultation-site-visit.png"
   },
   {
-    icon: Pencil,
-    title: "Parking Stall Design",
-    description: "Custom design and layout planning for optimal charging integration"
+    number: "2",
+    title: "Design",
+    description: "We design a creative solution that perfectly aligns with your property requirements, streamlining the installation. We also offer tailored parking stall and wall designs to complement your business and property aesthetics.",
+    image: "/stock-photos/design.png"
   },
   {
-    icon: HardHat,
-    title: "Infrastructure Upgrades",
-    description: "Necessary electrical upgrades and infrastructure preparation at no cost"
+    number: "3",
+    title: "Pre-Installation",
+    description: "Before installation, our expert electricians and technicians perform necessary infrastructure upgrades to ensure a smooth and seamless installation process.",
+    image: "/stock-photos/pre-installation.png"
   },
   {
-    icon: Wrench,
+    number: "4",
     title: "Installation",
-    description: "Professional installation by certified technicians, completely free"
+    description: "Once the groundwork is laid, we proceed to order and install the charging terminals, seamlessly integrating them into your property to deliver a hassle-free charging experience.",
+    image: "/stock-photos/installation.png"
   },
   {
-    icon: Battery,
-    title: "Charger Setup",
-    description: "Final configuration and testing to ensure optimal performance"
+    number: "5",
+    title: "Network Connection",
+    description: "Following installation, our charging terminals are swiftly connected to the operational management software, forming a reliable and efficient network. This will allow drivers to find and book your charger and make payments directly through the HoneyBadger mobile app.",
+    image: "/stock-photos/network-connection.png"
+  },
+  {
+    number: "6",
+    title: "Support & Maintenance",
+    description: "The HoneyBadger team provides zero-cost maintenance and service. Our dedicated team is here to alleviate any concerns, providing ongoing support to ensure optimal performance and a worry-free experience.",
+    image: "/stock-photos/support-maintenance.png"
   }
 ];
 
@@ -65,67 +76,78 @@ export const ValueProposition = () => {
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-6">
+        {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold">
             How It Works
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From consultation to revenue generation, our proven process makes EV charging adoption effortless
-          </p>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
-          {/* Progress Line */}
-          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-muted z-0">
-            <div className="h-full bg-primary origin-left transform transition-all duration-2000 ease-out" 
-                 style={{ 
-                   width: `${(visibleSteps.filter(Boolean).length / steps.length) * 100}%` 
-                 }} 
-            />
-          </div>
-
-          <div className="grid md:grid-cols-5 gap-6 lg:gap-8">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              const isVisible = visibleSteps[index];
-              
-              return (
-                <div
-                  key={index}
-                  ref={el => refs.current[index] = el}
-                  className={`relative text-center transition-all duration-700 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: `${index * 200}ms` }}
-                >
-                  {/* Step Number */}
-                  <div className="relative mb-6 z-10">
-                    <div className={`w-16 h-16 mx-auto rounded-full border-4 flex items-center justify-center transition-all duration-500 ${
-                      isVisible 
-                        ? 'bg-primary border-primary text-primary-foreground' 
-                        : 'bg-background border-muted text-muted-foreground'
-                    }`}>
-                      <Icon className="w-8 h-8" />
-                    </div>
+        {/* Steps Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+          {steps.map((step, index) => {
+            const isVisible = visibleSteps[index];
+            const [isHovered, setIsHovered] = useState(false);
+            
+            return (
+              <div
+                key={index}
+                ref={el => refs.current[index] = el}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className={`group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-700
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                {/* Background Image with Overlay */}
+                <div 
+                  className="absolute inset-0 transition-all duration-500 ease-out"
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${step.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    opacity: isHovered ? 1 : 0,
+                    transform: isHovered ? 'scale(1.05)' : 'scale(1)'
+                  }}
+                />
+                
+                {/* Content */}
+                <div className="relative p-8 z-10">
+                  {/* Number and Title */}
+                  <div className="flex items-baseline gap-3 mb-4">
+                    <span className={`text-2xl font-bold transition-colors duration-500 ${
+                      isHovered ? 'text-white/80' : 'text-foreground'
+                    }`}>{step.number}</span>
+                    <h3 className={`text-xl font-bold transition-colors duration-500 ${
+                      isHovered ? 'text-white' : 'text-foreground'
+                    }`}>{step.title}</h3>
                   </div>
-
-                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  
+                  {/* Description */}
+                  <p className={`text-lg leading-relaxed transition-colors duration-500 ${
+                    isHovered ? 'text-white/90' : 'text-foreground'
+                  }`}>
+                    {step.description}
+                  </p>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
+        </div>
 
-          {/* Learn More Button */}
-          <div className="mt-16 text-center">
-            <Button
-              onClick={() => navigate('/host-charger')}
-              className="group"
-            >
-              Learn More
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </div>
+        {/* CTA Section */}
+        <div className="text-center">
+          <p className="text-lg text-foreground mb-6">
+            Reliable. Easy. Fast.
+          </p>
+          <Button
+            onClick={() => navigate('/host-charger')}
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold rounded-xl"
+          >
+            Book a Site Visit
+          </Button>
         </div>
       </div>
     </section>
