@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Apple, Download } from "lucide-react";
+import { AppleIcon } from "./icons/AppleIcon";
+import { AndroidIcon } from "./icons/AndroidIcon";
 import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
@@ -40,28 +41,36 @@ export const Hero = () => {
               <span className="block">Solutions</span>
             </h1>
 
-            <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-xl">
+            <p className="text-xl text-foreground mb-4 leading-relaxed max-w-xl">
               HoneyBadger Charging offers 100% free EV charging solutions,
               covering everything from site visits to installation. Our experts
               handle it all—consultations, parking design, electrical upgrades,
               and charger setup—at no cost to you.
             </p>
+            <p className="text-xl text-foreground mb-12 leading-relaxed max-w-xl">
+              Manage charging on the go with our
+<a href="https://apps.apple.com" className="mx-1 underline decoration-primary/50 underline-offset-4 hover:text-primary inline-flex items-center gap-1.5">iOS <div className="h-5 w-5"><AppleIcon /></div></a>
+              and
+              <a href="https://play.google.com" className="mx-1 underline decoration-primary/50 underline-offset-4 hover:text-primary inline-flex items-center gap-1.5">Android <div className="h-5 w-5"><AndroidIcon /></div></a>
+              app.
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="border-2 border-transparent bg-foreground hover:bg-foreground/90 text-background px-8 py-6 text-base font-semibold rounded-xl"
+                className="border-2 border-transparent bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl"
               >
                 <span>Become a Site Host</span>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-foreground bg-transparent text-foreground hover:bg-foreground hover:text-background px-8 py-6 text-base font-semibold rounded-xl"
+                className="border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl"
               >
                 <span>Find a Charger</span>
               </Button>
             </div>
+
           </div>
         </div>
       </div>
