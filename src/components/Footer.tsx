@@ -142,27 +142,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="glass-card rounded-2xl p-8 mb-12">
-          <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Stay Powered Up</h3>
-            <p className="text-muted-foreground mb-6">
-              Get the latest updates on EV charging technology, new locations, and exclusive offers.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
-              />
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 whitespace-nowrap">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
+        
         <div className="flex flex-col lg:flex-row justify-between items-center pt-8 border-t border-border space-y-4 lg:space-y-0">
           <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-muted-foreground">
             <p>&copy; {currentYear} HoneyBadger Charging. All rights reserved.</p>

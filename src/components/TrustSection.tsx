@@ -54,42 +54,6 @@ export const TrustSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Case Study CTA */}
-        <div className="text-center bg-primary rounded-2xl p-12 text-primary-foreground">
-          <h3 className="text-3xl font-bold mb-4">
-            Ready to Start Your Success Story?
-          </h3>
-          <p className="text-xl mb-8 opacity-90">
-            Join hundreds of property owners already earning with HoneyBadger Charging
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center" role="group" aria-label="Success story actions">
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-gray-100 px-8 py-4 text-lg font-semibold group transition-all"
-              aria-label="View detailed success stories from our customers"
-              aria-describedby="success-stories-description"
-            >
-              <span>View Success Stories</span>
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold transition-all"
-              aria-label="Schedule a free consultation with our EV charging experts"
-              aria-describedby="consultation-description"
-            >
-              <span>Get Free Consultation</span>
-            </Button>
-          </div>
-          
-          {/* Screen reader descriptions */}
-          <div className="sr-only">
-            <p id="success-stories-description">Read case studies and testimonials from property owners who have successfully implemented HoneyBadger charging solutions.</p>
-            <p id="consultation-description">Book a no-obligation consultation to discuss your property's EV charging potential and revenue opportunities.</p>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -10,7 +10,7 @@ const blogPosts = [
     excerpt: "Explore the latest trends and innovations shaping the electric vehicle charging landscape.",
     date: "March 15, 2024",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=400&h=250&fit=crop",
+    image: "/charger-closeup-bokeh.png",
     slug: "future-of-ev-charging-2024"
   },
   {
@@ -19,7 +19,7 @@ const blogPosts = [
     excerpt: "A comprehensive guide to selecting the perfect charging solution for your commercial property.",
     date: "March 10, 2024",
     readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=400&h=250&fit=crop",
+    image: "/charging-station.jpeg",
     slug: "choose-right-ev-charger-business"
   },
   {
@@ -28,7 +28,7 @@ const blogPosts = [
     excerpt: "Learn how property owners are generating substantial returns with EV charging infrastructure.",
     date: "March 5, 2024",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=250&fit=crop",
+    image: "/phone-rfid.png",
     slug: "ev-charging-station-roi"
   }
 ];
@@ -40,20 +40,17 @@ export const BlogSection = () => {
     <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Latest Insights</h2>
-          <p className="text-xl text-foreground max-w-2xl mx-auto">
-            Stay informed with the latest news, trends, and insights from the EV charging industry.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">What's New</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {blogPosts.map((post) => (
             <Card 
               key={post.id} 
-              className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden"
               onClick={() => navigate(`/blog/${post.slug}`)}
             >
-              <div className="relative overflow-hidden rounded-t-lg">
+              <div className="relative overflow-hidden">
                 <img 
                   src={post.image} 
                   alt={post.title}
@@ -87,11 +84,31 @@ export const BlogSection = () => {
             variant="outline" 
             size="lg"
             onClick={() => navigate('/blog')}
-            className="group"
+            className="group rounded-xl"
           >
             View All Articles
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>
+        </div>
+
+        {/* Newsletter Signup */}
+        <div className="mt-20">
+          <div className="text-center bg-primary rounded-2xl py-16 px-12 text-primary-foreground">
+            <h3 className="text-3xl font-bold mb-4">Stay Powered Up</h3>
+            <p className="text-xl mb-8 opacity-90">
+              Get the latest updates on EV charging technology, new locations, and exclusive offers.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-xl border-0 bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
+              />
+              <Button className="bg-white text-primary hover:bg-gray-100 px-8 py-3 text-lg font-semibold whitespace-nowrap h-auto rounded-xl">
+                Subscribe
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
