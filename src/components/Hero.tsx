@@ -22,7 +22,7 @@ export const Hero = () => {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url(/charger-closeup-bokeh.png)",
+          backgroundImage: "url(/hero-background-chargers.png)",
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}

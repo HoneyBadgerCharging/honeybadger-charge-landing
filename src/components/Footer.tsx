@@ -1,4 +1,4 @@
-import { Zap, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Zap, Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
@@ -27,14 +27,11 @@ export const Footer = () => {
               />
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              Zero-cost EV charging solutions that power the future. Start earning revenue from day one with our complete charging infrastructure.
+              Zero-cost EV charging solutions that power the future.
             </p>
             <div className="flex space-x-4">
               <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Facebook className="w-4 h-4" />
-              </Button>
-              <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
-                <Twitter className="w-4 h-4" />
               </Button>
               <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground transition-colors">
                 <Instagram className="w-4 h-4" />
@@ -57,16 +54,6 @@ export const Footer = () => {
               <li>
                 <a href="/find-charger" className="text-muted-foreground hover:text-primary transition-colors">
                   Find a Charger
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Fleet Solutions
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  Property Management
                 </a>
               </li>
             </ul>
@@ -122,8 +109,8 @@ export const Footer = () => {
                 <Mail className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-muted-foreground">General Inquiries</p>
-                  <a href="mailto:info@honeybadgercharge.com" className="text-foreground hover:text-primary transition-colors font-medium">
-                    info@honeybadgercharge.com
+                  <a href="mailto:info@badgercharging.ca" className="text-foreground hover:text-primary transition-colors font-medium">
+                    info@badgercharging.ca
                   </a>
                 </div>
               </div>
@@ -133,8 +120,7 @@ export const Footer = () => {
                 <div>
                   <p className="text-muted-foreground">Headquarters</p>
                   <p className="text-foreground">
-                    123 Energy Way<br />
-                    San Francisco, CA 94105
+                    Vancouver, Canada
                   </p>
                 </div>
               </div>

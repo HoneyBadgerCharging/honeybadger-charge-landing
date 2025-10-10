@@ -7,30 +7,33 @@ const blogPosts = [
   {
     id: 1,
     title: "The Future of EV Charging: What to Expect in 2024",
-    excerpt: "Explore the latest trends and innovations shaping the electric vehicle charging landscape.",
+    excerpt:
+      "Explore the latest trends and innovations shaping the electric vehicle charging landscape.",
     date: "March 15, 2024",
     readTime: "5 min read",
     image: "/charger-closeup-bokeh.png",
-    slug: "future-of-ev-charging-2024"
+    slug: "future-of-ev-charging-2024",
   },
   {
     id: 2,
     title: "How to Choose the Right EV Charger for Your Business",
-    excerpt: "A comprehensive guide to selecting the perfect charging solution for your commercial property.",
+    excerpt:
+      "A comprehensive guide to selecting the perfect charging solution for your commercial property.",
     date: "March 10, 2024",
     readTime: "8 min read",
-    image: "/charging-station.jpeg",
-    slug: "choose-right-ev-charger-business"
+    image: "/charging-station.png",
+    slug: "choose-right-ev-charger-business",
   },
   {
     id: 3,
     title: "EV Charging Station ROI: Maximizing Your Investment",
-    excerpt: "Learn how property owners are generating substantial returns with EV charging infrastructure.",
+    excerpt:
+      "Learn how property owners are generating substantial returns with EV charging infrastructure.",
     date: "March 5, 2024",
     readTime: "6 min read",
     image: "/phone-rfid.png",
-    slug: "ev-charging-station-roi"
-  }
+    slug: "ev-charging-station-roi",
+  },
 ];
 
 export const BlogSection = () => {
@@ -45,14 +48,14 @@ export const BlogSection = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           {blogPosts.map((post) => (
-            <Card 
-              key={post.id} 
+            <Card
+              key={post.id}
               className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden"
               onClick={() => navigate(`/blog/${post.slug}`)}
             >
               <div className="relative overflow-hidden">
-                <img 
-                  src={post.image} 
+                <img
+                  src={post.image}
                   alt={post.title}
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -80,10 +83,10 @@ export const BlogSection = () => {
         </div>
 
         <div className="text-center">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="lg"
-            onClick={() => navigate('/blog')}
+            onClick={() => navigate("/blog")}
             className="group rounded-xl"
           >
             View All Articles
@@ -96,7 +99,8 @@ export const BlogSection = () => {
           <div className="text-center bg-primary rounded-2xl py-16 px-12 text-primary-foreground">
             <h3 className="text-3xl font-bold mb-4">Stay Powered Up</h3>
             <p className="text-xl mb-8 opacity-90">
-              Get the latest updates on EV charging technology, new locations, and exclusive offers.
+              Get the latest updates on EV charging technology, new locations,
+              and exclusive offers.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
